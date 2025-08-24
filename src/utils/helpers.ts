@@ -1,8 +1,6 @@
 // utils/index.ts
 
-// Экспорты из других модулей utils
-export * from './formatters';
-export * from './constants';
+// (Экспорты из других модулей были удалены, чтобы избежать конфликтов реэкспорта)
 
 // Импорты для локальных функций
 import { AppMode } from '../types';
@@ -288,32 +286,4 @@ export const safeAsync = async <T>(
   }
 };
 
-// ==== EXPORT COLLECTIONS ====
-
-export const VIEW_CONFIGS = {
-  calendar: { title: 'Календарь', description: 'Месячное представление' },
-  schedule: { title: 'Расписание', description: 'Список событий' },
-  week: { title: 'Неделя', description: 'Недельное представление' },
-  day: { title: 'День', description: 'Детальный вид дня' },
-  agenda: { title: 'Агенда', description: 'Компактный список' },
-  library: { title: 'Библиотека', description: 'Сохраненные шаблоны' },
-  analytics: { title: 'Аналитика', description: 'Статистика и отчеты' },
-  profile: { title: 'Профиль', description: 'Настройки приложения' },
-  roadmap: { title: 'Роадмап', description: 'План развития' }
-} as const;
-
-export const MODE_ICONS = {
-  focus: 'Flame',
-  relax: 'Leaf',
-  planning: 'ClipboardList'
-} as const;
-
-export const KEYBOARD_SHORTCUTS = {
-  newEvent: 'KeyN',
-  today: 'KeyT', 
-  focusMode: 'KeyQ',
-  relaxMode: 'KeyW',
-  planningMode: 'KeyE',
-  nextPeriod: 'ArrowRight',
-  prevPeriod: 'ArrowLeft'
-} as const;
+// ==== EXPORT COLLECTIONS ==== (Удалены дубликаты; использовать src/utils/constants.ts)

@@ -6,7 +6,7 @@ import { settingsManager } from './store/settings';
 import { useNavigation, useModal } from './store/hooks';
 
 // Компоненты
-import Header from './components/Header';
+import Header from './components/layout/Header';
 import SecurityGate from './components/SecurityGate';
 import CalendarView from './components/views/CalendarView';
 import ProfileView from './components/views/ProfileView';
