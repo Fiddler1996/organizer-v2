@@ -1,16 +1,16 @@
 // components/forms/QuickAdd.tsx
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  Plus,
+  // Plus,
   Send,
   Sparkles,
   Clock,
   Calendar,
   MapPin,
   Tag,
-  AlertCircle,
+  // AlertCircle,
   HelpCircle,
-  Zap
+  // Zap
 } from 'lucide-react';
 import { Button } from '../ui';
 import { useTimeBlocks, useNotifications, useCalendar } from '../../store/hooks';
@@ -31,7 +31,7 @@ export const QuickAdd: React.FC<QuickAddProps> = ({
   
   const [input, setInput] = useState('');
   const [showPreview, setShowPreview] = useState(false);
-  const [showHelp, setShowHelp] = useState(false);
+  const [_showHelp, _setShowHelp] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Парсинг введенного текста
@@ -104,7 +104,7 @@ export const QuickAdd: React.FC<QuickAddProps> = ({
   };
 
   // Быстрые шаблоны
-  const quickTemplates = [
+  const _quickTemplates = [
     {
       text: "Практика фортепиано 9:00-10:30 #техника",
       icon: "🎹",

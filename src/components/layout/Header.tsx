@@ -21,7 +21,7 @@ const Header: React.FC = () => {
   const { activeView, setActiveView } = useNavigation();
   const { notifications, removeNotification, clearAllNotifications } = useNotifications();
   const { settings, toggleTheme, getCurrentTheme } = useSettings();
-  const { logout, sessionExpiry, lastActivity } = useSecurity();
+  const { logout, sessionExpiry /* , lastActivity */ } = useSecurity();
   
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);

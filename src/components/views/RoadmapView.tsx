@@ -1,10 +1,10 @@
 // components/views/RoadmapView.tsx
 import React, { useState } from 'react';
 import {
-  Map,
+  // Map,
   CheckCircle,
   Circle,
-  Clock,
+  // Clock,
   Target,
   Rocket,
   Star,
@@ -320,7 +320,7 @@ export const RoadmapView: React.FC = () => {
   };
 
   // Фильтрация функций по категории
-  const filteredFeatures = selectedCategory === 'all' 
+  const _filteredFeatures = selectedCategory === 'all' 
     ? roadmapPhases.flatMap(phase => phase.features)
     : roadmapPhases.flatMap(phase => phase.features.filter(f => f.category === selectedCategory));
 
@@ -412,7 +412,7 @@ export const RoadmapView: React.FC = () => {
         {roadmapPhases.map((phase) => {
           const isExpanded = expandedPhases.includes(phase.id);
           const completedInPhase = phase.features.filter(f => f.status === 'completed').length;
-          const currentInPhase = phase.features.filter(f => f.status === 'current').length;
+          const _currentInPhase = phase.features.filter(f => f.status === 'current').length;
 
           return (
             <div

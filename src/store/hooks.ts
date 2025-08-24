@@ -1,7 +1,7 @@
 // store/hooks.ts
 import { useCallback, useMemo } from 'react';
 import { useAppContext } from './context';
-import type { TimeBlock, CalendarEvent, ViewType, AppMode, CalendarView } from '../types';
+import type { TimeBlock, CalendarEvent as _CalendarEvent, ViewType, AppMode, CalendarView } from '../types';
 import { normalizeEventText } from '../utils/parsers';
 import { isToday, isTomorrow } from '../utils/formatters';
 
@@ -327,7 +327,9 @@ export const useTheme = () => {
     } else {
       root.classList.remove('dark');
     }
-    try { localStorage.setItem('theme', theme); } catch {}
+    try { localStorage.setItem('theme', theme); }
+    // eslint-disable-next-line no-empty
+    catch {}
   };
 
   const init = () => {

@@ -250,6 +250,6 @@ export const SUCCESS_MESSAGES = {
 export const PATTERNS = {
   time: /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/,
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-  phone: /^\+?[\d\s\-\(\)]+$/,
+  phone: /^\+?[\d\s\-()]+$/,
   url: /^https?:\/\/.+/
 } as const;

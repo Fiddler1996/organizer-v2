@@ -1,6 +1,6 @@
 // components/forms/EventForm.tsx
 import React, { useState, useEffect } from 'react';
-import { X, Clock, MapPin, Tag, AlertCircle } from 'lucide-react';
+import { X, /* Clock, */ MapPin, Tag, AlertCircle } from 'lucide-react';
 import { useTimeBlocks, useModal } from '../../store/hooks';
 import { Button } from '../ui';
 import type { TimeBlock, TimeBlockType, Priority } from '../../types';
@@ -17,8 +17,8 @@ interface EventFormProps {
  */
 export const EventForm: React.FC<EventFormProps> = ({
   timeBlock,
-  onSave,
-  onCancel,
+  onSave: _onSave,
+  onCancel: _onCancel,
   isOpen
 }) => {
   const { addTimeBlock, updateTimeBlock } = useTimeBlocks();

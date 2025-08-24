@@ -99,7 +99,7 @@ export const getWeekDays = (date: Date, weekStartsOn: 0 | 1 = 1): Date[] => {
 export const getMonthDays = (date: Date): Date[] => {
   const year = date.getFullYear();
   const month = date.getMonth();
-  const firstDay = new Date(year, month, 1);
+  const _firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
   const days = [];
   
