@@ -1,8 +1,8 @@
 // components/Header.tsx - Обновленная версия с рабочими темами
 import React, { useState } from 'react';
-import { useNavigation, useNotifications } from '../store/hooks';
-import { useSettings } from '../store/settings';
-import { useSecurity } from '../store/security';
+import { useNavigation, useNotifications } from '../../store/hooks';
+import { useSettings } from '../../store/settings';
+import { useSecurity } from '../../store/security';
 import { 
   Sun, 
   Moon, 
@@ -14,14 +14,14 @@ import {
   Shield,
   Clock
 } from 'lucide-react';
-import { VIEW_CONFIGS } from '../utils/constants';
-import type { ViewType } from '../types';
+import { VIEW_CONFIGS } from '../../utils/constants';
+import type { ViewType, Notification } from '../../types';
 
 const Header: React.FC = () => {
   const { activeView, setActiveView } = useNavigation();
   const { notifications, removeNotification, clearAllNotifications } = useNotifications();
   const { settings, toggleTheme, getCurrentTheme } = useSettings();
-  const { logout, sessionExpiry, lastActivity } = useSecurity();
+  const { logout, sessionExpiry /* , lastActivity */ } = useSecurity();
   
   const [showNotifications, setShowNotifications] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -123,7 +123,7 @@ const Header: React.FC = () => {
 
           {/* Навигация (скрытая на мобильных) */}
           <nav className="hidden md:flex items-center gap-1">
-            {Object.entries(VIEW_CONFIGS).map(([key, config]) => (
+            {Object.entries(VIEW_CONFIGS as Record<ViewType, { title: string; description: string }>).map(([key, config]) => (
               <button
                 key={key}
                 onClick={() => setActiveView(key as ViewType)}
@@ -230,7 +230,7 @@ const Header: React.FC = () => {
                         </div>
                       ) : (
                         <div className="p-2">
-                          {notifications.map((notification) => (
+                          {notifications.map((notification: Notification) => (
                             <div
                               key={notification.id}
                               className={`flex items-start gap-3 p-3 rounded-lg mb-2 ${
@@ -306,7 +306,7 @@ const Header: React.FC = () => {
             }`}>
               <nav className="p-4">
                 <div className="grid grid-cols-2 gap-2">
-                  {Object.entries(VIEW_CONFIGS).map(([key, config]) => (
+                  {Object.entries(VIEW_CONFIGS as Record<ViewType, { title: string; description: string }>).map(([key, config]) => (
                     <button
                       key={key}
                       onClick={() => {

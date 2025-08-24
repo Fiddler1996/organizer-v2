@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { useCalendar } from '../../store/hooks';
 import { useSettings } from '../../store/settings';
-import { addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, isSameMonth, format } from 'date-fns';
+import { addDays, startOfMonth, endOfMonth, startOfWeek, endOfWeek, isSameMonth /* , format */ } from 'date-fns';
 import { ChevronLeft, ChevronRight, Calendar, ChevronDown, X } from 'lucide-react';
 import type { CalendarEvent } from '../../types';
 

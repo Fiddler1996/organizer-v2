@@ -46,8 +46,8 @@ const MAX_AUTO_LOCK_TIMEOUT = 480; // максимум 8 часов
 class SecurityManagerImpl implements SecurityManager {
   private state: SecurityState;
   private listeners: Set<(state: SecurityState) => void> = new Set();
-  private activityTimer: NodeJS.Timeout | null = null;
-  private checkInterval: NodeJS.Timeout | null = null;
+  private activityTimer: ReturnType<typeof setTimeout> | null = null;
+  private checkInterval: ReturnType<typeof setTimeout> | null = null;
 
   constructor() {
     this.state = this.loadState();

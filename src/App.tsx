@@ -1,19 +1,19 @@
 // App.tsx - Обновленная версия с модулем безопасности
 import React, { useEffect, useState } from 'react';
 import { AppProvider } from './store/context';
-import { securityManager, useSecurity } from './store/security';
+import { securityManager, useSecurity as _useSecurity } from './store/security';
 import { settingsManager } from './store/settings';
 import { useNavigation, useModal } from './store/hooks';
 
 // Компоненты
-import Header from './components/Header';
+import Header from './components/layout/Header';
 import SecurityGate from './components/SecurityGate';
 import CalendarView from './components/views/CalendarView';
 import ProfileView from './components/views/ProfileView';
 // import EventForm from './components/forms/EventForm'; // Предполагается, что существует
 
 // Типы
-import type { ViewType } from './types';
+import type { ViewType as _ViewType } from './types';
 
 // Основное приложение (требует аутентификации)
 const AuthenticatedApp: React.FC = () => {

@@ -6,7 +6,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
-  children: React.ReactNode;
+  icon?: React.ComponentType<{ className?: string }>;
+  children?: React.ReactNode;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
@@ -15,6 +16,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   loading = false,
   disabled,
   className = '',
+  icon,
   children,
   ...props
 }, ref) => {
@@ -80,6 +82,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
           />
         </svg>
       )}
+      {!loading && icon && (() => { const Icon = icon; return <Icon className="w-4 h-4 mr-2" />; })()}
       {children}
     </button>
   );

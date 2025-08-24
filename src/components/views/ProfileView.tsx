@@ -28,7 +28,7 @@ const ProfileView: React.FC = () => {
     settings, 
     updateSettings, 
     resetSettings, 
-    toggleTheme, 
+    toggleTheme: _toggleTheme, 
     getCurrentTheme,
     exportSettings,
     importSettings
@@ -39,8 +39,8 @@ const ProfileView: React.FC = () => {
     setAutoLock, 
     autoLockEnabled, 
     autoLockTimeout,
-    sessionExpiry,
-    lastActivity 
+    sessionExpiry: _sessionExpiry,
+    lastActivity: _lastActivity 
   } = useSecurity();
   
   const { addNotification } = useNotifications();
